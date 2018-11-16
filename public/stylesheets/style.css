@@ -1,0 +1,162 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+      background-color: #c8ffc8;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#budgetScreen{
+  
+    background-color: #a4fda4;
+    border: solid;
+    border-width: 8px;
+    padding: 13px;
+    border-radius: 16px;
+    height:500px;
+    font-size: 20px;
+}
+
+#newUserScreen{
+  width: 450px;
+    background-color: #a4fda4;
+    border: solid;
+    border-width: 8px;
+    padding: 13px;
+    border-radius: 16px;
+    font-size: 20px;
+}
+
+#loginScreen{
+  width: 300px;
+    background-color: #a4fda4;
+    border: solid;
+    border-width: 8px;
+    padding: 13px;
+    border-radius: 16px;
+    font-size: 20px;
+}
+
+#budgetScreen{
+  display: none;
+}
+
+#createNewProfileButton{
+  color: blue;
+  cursor: pointer;
+      font-size: 18px;
+}
+
+#newUserScreen{
+  display: none;
+}
+
+#AdminScreen{
+  display: none;
+}
+
+#addMoney_pop{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid;
+  width: 300px;
+    background-color: #a4fda4;
+    border: solid;
+    border-width: 8px;
+    padding: 13px;
+    border-radius: 16px;
+}
+
+.spanCell{
+    display: inline-block;
+    border: solid;
+    width: 235px
+}
+
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-text)
+}
+
+input{
+      font-size: 21px;
+    border-radius: 5px;
+    background-color: #fffa8b;
+}
+
+select{
+  font-size: 21px;
+    border-radius: 5px;
+    background-color: #fffa8b;
+}
+
+button{
+  font-size: 20px;
+    background-color: #fff520;
+        margin: 5px 0px;
+}
+
+.moneyDisplay{
+      width: 600px;
+    border: solid;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 7px 0px;
+    font-size: 29px;
+    background-color: #00ffcd;
+}
+
+#deleteInformer{
+  font-size: 20px;
+    font-weight: bold;
+    margin-left: 18px;
+}
+
+.deleteOnClick{
+  border: dashed;
+  color: red;
+}
+
+.horizontalScrollArea{
+      width: -webkit-fill-available;
+    overflow: scroll;
+}
+
+#budget1{
+  width: max-content;
+}
+
+.stay{
+      z-index: 1;
+    background-color: white;
+    position: absolute
+}
+
+.spanCell div{
+  border-bottom: solid;
+    border-width: 1px;
+  
+}
+
+#siteTitle{
+  font-size: 43px;
+    font-weight: bold;
+    font-family: cursive;
+    color: #188e0b;
+    margin-bottom: 20px;
+}
+
+#disableCover{
+  position: absolute;
+    z-index: 5;
+    background-color: transparent;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    top: 0px;
+    left: 0px;
+    display:none;
+}

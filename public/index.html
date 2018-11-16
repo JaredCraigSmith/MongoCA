@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Budget Buddy</title>
+<link rel="stylesheet" href="stylesheets/style.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/script.js"></script>
+</head>
+<body>
+<div id="disableCover">This profile is for display only<button onclick="logout_Transition()">back</button></div>
+<div id="siteTitle">Budget Buddy</div>
+
+<div id="loginScreen">
+    <div> <span>username</span> <input id="usernameInput" type="text" name="" placeholder="username"/>  </div>
+    <div> <span>password</span> <input id="passwordInput" type="text" name="" placeholder="password"/>  </div>
+    <button id="loginButton" onclick="loginUser()">Login</button>
+    <div id="createNewProfileButton" onclick="CreateNewUser_Transition()">Create new profile</div>
+    <div style="margin-top: 12px; font-size: 16px;">* Type "example" for the username and password to view an example profile</div>
+    
+</div>
+
+<div id="newUserScreen">
+    <button onclick="newUserScreen_backTransition()">< go back</button>
+    <div> <span>username</span> <input id="new_usernameInput" type="text" name="" placeholder="username"/>  </div>
+    <div> <span>password</span> <input id="new_passwordInput" type="text" name="" placeholder="password"/>  </div>
+    <div style="margin-top: 14px; text-decoration: underline;">Enter how much you have in each catagory</div>
+    <div style="margin-top: 14px;"> <span>total money $</span> <input id="totalMoneyInput" type="text" name="" placeholder="00.00" onkeyup="calculateUsableAmount()"/>  </div>
+    <div> <span>Savings $</span> <input id="savingsInput" type="text" name="" placeholder="00.00" onkeyup="calculateUsableAmount()"/>  </div>
+    <div> <span>Usable amount $</span> <span id="newUser_usableAmount">00.00</span>  </div>
+    
+    <button id="comfirm_createNewProfileButton" onclick="createNewProfile()">Create</button>
+
+</div>
+
+<div id="budgetScreen">
+    <button onclick="logout_Transition()">log out</button>
+    <div> <button onclick="show('addMoney_pop')">add money</button> </div>
+    <div class="moneyDisplay"> <span>Savings </span> <span id="savingsAmount" style="float:right">$00.00</span> <span style="float:right">$</span>   </div>
+    <div class="moneyDisplay"> <span>Usable money </span> <span id="usableAmount" style="float:right">$00.00</span> <span style="float:right">$</span> </div>
+    <div> 
+        <span>transfer $</span> <input id="transferAmount" type="text" name="" placeholder="00.00"/> 
+        <select id="transferType"><option value="toUsable">from savings to usable money</option><option value="toSavings">from usable money to savings</option></select> 
+        <button onclick="transferMoney()">submit</button> 
+    </div>
+    
+    <div >
+         <button onclick="addNewBudgetCatagory()">+</button> <button id="removeCatagoryButton" onclick="removeBudgetCatagory()">-</button>
+         <div class="horizontalScrollArea">
+             <div id="budget1">
+                 <span class="spanCell stay"> <div>catagory:</div> <div>Budget amount:</div> <div>November spent amount:</div> </span> 
+                 <span class="spanCell catCellD"> <div contenteditable=true data-text="Enter catagory">dummy cell</div> <div contenteditable=true data-text="00.00">0.00</div> <div contenteditable=true data-text="00.00">0.00</div> </span>
+             </div>
+         </div>
+    </div>
+    
+    <!--pops-->
+    
+    <div id="addMoney_pop">
+        <div> <span>Enter amount to add $</span> <input id="addMoneyAmount" type="text" name="" placeholder="00.00" onkeyup="addMoney_calculatePercentage()"/> </div>
+        <div> <span>percentage to savings %</span> <input id="addSavingsPercentage" type="text" name="" value="0" onkeyup="addMoney_calculatePercentage()"/></div>
+        <div> <span>Adding to savings $</span> <span id="addingToSavingsAmount" >00.00</span></div>
+        <div> <span>Adding to usable $</span> <span id="addingToUsableAmount"  >00.00</span></div>
+        <button onclick="submitAddMoneyRequest()">submit</button>
+        <button onclick="hide('addMoney_pop')">cancel</button>
+    </div>
+    
+    
+</div>
+
+<div id="AdminScreen">
+    <button onclick="adminback()">back</button>
+    <button>clear database</button>
+</div>
+
+
+
+
+</body>
+</html>
